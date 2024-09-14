@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", cursive ,sans-serif;
+}
+
+body {
+    background-image: url(./background2.jpg);
+    background-size: cover;
+    background-position: top;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); 
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid white; 
+}
+
+.logo {
+    font-weight: bold;
+    color: white;
+    text-shadow: 15px 15px 15px green;
+    padding-left: 35px;
+    
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    padding-left: 755px;
+    border-radius: 20px;
+    color: aliceblue;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.home, .about, .contact, .service {
+    border-radius: 10px;
+    padding: 10px 15px;
+    border-color: white;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.home:before, .about:before, .contact:before, .service:before {
+    content: '';
+    background: linear-gradient(45deg, green, lightgreen, green, lightgreen);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.home:active, .about:active, .contact:active, .service:active {
+    color: #000
+}
+
+.home:active:after, .about:active:after, .contact:active:after, .service:active:after {
+    background: transparent;
+}
+
+.home:hover:before, .about:hover:before, .contact:hover:before, .service:hover:before {
+    opacity: 1;
+}
+
+.home:after, .about:after, .contact:after, .service:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+h1 {
+    display: flex;
+    color: white;
+    padding-right: 10p;
+    justify-content: center; 
+    padding-left: 0;
+    opacity: 0; 
+    animation: fadeIn 2s ease-in-out 0.5s forwards; 
+}
+
+h3 {
+    color: white;
+    display: flex;
+    justify-content: baseline;
+    padding-left: 500px;
+    opacity: 0; 
+    animation: fadeIn 2s ease-in-out 1s forwards; 
+}
+
+.info {
+    padding-top: 200px;
+    align-items: center;
+}
+
+.nate {
+    margin-top: -350px; 
+    margin-left: 90px;
+    padding-bottom: 300px; 
+    width: 550px;
+    height: 550px; 
+    opacity: 0; 
+    animation: fadeIn 2s ease-in-out 1.5s forwards; 
+}
+
+
+.contact-info {
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); 
+    color: white;
+    text-align: center;
+}
+
+.contact-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact-item {
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border: none; 
+}
+
+.contact-item h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.contact-item p {
+    font-size: 1.1em;
+}
+
+.contact-item p a {
+    color: #9bff9b;
+    text-decoration: none;
+}
+
+.contact-item p a:hover {
+    text-decoration: underline;
+}
